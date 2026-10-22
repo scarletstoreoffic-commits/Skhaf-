@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ШКАФ — маркетплейс вещей</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="aurora"><i></i><i></i><i></i></div><canvas id="bg"></canvas>
+<header>
+  <a class="logo" data-act="nav" data-v="catalog">ШКАФ</a>
+  <input id="q" type="search" placeholder="Найти куртку, кроссовки, наушники…">
+  <nav id="nav"></nav>
+</header>
+
+<main>
+  <section id="intro">
+    <div class="intro-in">
+      <h1 id="bigtitle" aria-label="ШКАФ"></h1>
+      <p class="sub">маркетплейс вещей — покупай и продавай одежду, обувь и технику</p>
+      <div class="row center"><button data-act="sell">+ Продать</button><button class="ghost" data-act="io">⇅ Импорт / экспорт</button></div>
+    </div>
+    <div class="scrollhint"><span>листай вниз</span><i></i></div>
+  </section>
+  <section id="showcase">
+    <div class="pin">
+      <div class="shtxt"><h2 id="shh">Вещи ищут <span>новый дом</span></h2>
+        <div class="stats"><div><b data-n="items">0</b><small>в продаже</small></div><div><b data-n="sellers">0</b><small>продавцов</small></div><div><b data-n="cats">0</b><small>категорий</small></div></div></div>
+      <div class="stage3d"><div class="orbit" id="orbit"></div></div>
+      <div class="prog3"><i id="p3"></i></div>
+    </div>
+  </section>
+  <section id="reviews">
+    <h2 class="rvh">Что говорят <span>покупатели</span></h2>
+    <div class="rvwrap"><div class="rsum" id="rsum"></div><div class="rlist" id="rlist"></div></div>
+  </section>
+  <section id="catalog">
+    <aside id="filters">
+      <h3>Категория</h3>
+      <div id="cats" class="chips"></div>
+      <h3>Цена, ₽</h3>
+      <div class="row"><input id="min" type="number" min="0" placeholder="от"><input id="max" type="number" min="0" placeholder="до"></div>
+      <h3>Состояние</h3><select id="cond"></select>
+      <h3>Город</h3><select id="city"></select>
+      <h3>Сортировка</h3>
+      <select id="sort">
+        <option value="new">Сначала новые</option><option value="cheap">Сначала дешёвые</option>
+        <option value="exp">Сначала дорогие</option><option value="pop">Популярные</option>
+      </select>
+      <label class="chk"><input id="stock" type="checkbox" checked> Только в продаже</label>
+      <button id="reset" class="ghost">Сбросить фильтры</button>
+    </aside>
+    <div>
+      <div class="bar"><b id="count"></b><span id="mode"></span></div>
+      <div id="grid"></div>
+    </div>
+  </section>
+  <section id="page" hidden></section>
+</main>
+
+<dialog id="dlg"></dialog>
+<div id="toast" hidden></div>
+<div id="fx" popover="manual"></div>
+<script src="script.js"></script>
+</body>
+</html>
